@@ -47,7 +47,7 @@ const Links = ({ resumeData, uniqueId, fetchResumeData }) => {
   return (
     <div className="w-screen flex justify-center">
       <div className="w-full md:max-w-6xl bg-white shadow-2xl rounded-lg p-8 flex flex-col md:flex-row mx-4 mt-5">
-        <div className="md:w-1/5 w-full">
+        <div className="md:w-1/5 w-full flex justify-center md:justify-start">
           <h2 className="text-xl font-bold text-gray-800">Links</h2>
         </div>
         <div className="md:w-4/5 w-full space-y-3 mt-4 md:mt-0">

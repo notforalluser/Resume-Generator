@@ -42,13 +42,13 @@ const BasicInfo = ({ resumeData, uniqueId, fetchResumeData }) => {
     <div className="w-screen flex justify-center">
       <div className="w-full md:max-w-6xl bg-white shadow-2xl rounded-lg p-8 flex flex-col md:flex-row mx-4 mt-8">
         <div className="md:w-1/5 w-full flex justify-center md:justify-start">
-          <h2 className="text-xl font-bold text-gray-800">Basic Info</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-6 md:mb-0">Basic Info</h2>
         </div>
 
         <div className="md:w-4/5 w-full mt-4 md:mt-0">
           {!resumeData.basicInfo?.name ? (
             <div className="relative">
-              <div className="absolute right-0">
+              <div className="absolute right-0 -mt-5 md:-mt-0">
                 <Button
                   variant="add"
                   label="Add Basic Info"

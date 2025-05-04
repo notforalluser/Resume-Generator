@@ -22,7 +22,7 @@ function App() {
     if (storedId) {
       setUniqueId(storedId);
     } else {
-      axios.get("https://resume-generator-6699.onrender.com/generate-unique-id").then((res) => {
+      axios.get(" /generate-unique-id").then((res) => {
         setUniqueId(res.data.uniqueId);
         localStorage.setItem("uniqueId", res.data.uniqueId);
       });
@@ -81,7 +81,7 @@ function App() {
   };
 
   return (
-    <div className='bg-gradient-to-r from-indigo-400 to-purple-500 p-4 grid justify-center'>
+    <div className='bg-gradient-to-r from-indigo-400 to-purple-500 p-4 grid justify-center h-full'>
       <h1 className='text-4xl font-bold text-white text-center mt-4'>Resume Generator</h1>
       <div className='grid md:flex items-center justify-center mt-5 md:space-x-24'>
         <div className='text-white text-lg font-bold bg-gradient-to-r from-slate-600 to-slate-700 rounded-xl px-4 py-1 border-2'>ID - <span>{uniqueId}</span></div>
@@ -145,7 +145,7 @@ function App() {
       <ResumeButtons />
 
       <div className='flex mt-6 place-content-center w-full'>
-        <p className='bg-red-500 text-white px-2 rounded-lg italic'>Note - In case data is not showing in the preview or download, please refresh the website.
+        <p className='bg-red-500 text-white px-2 rounded-lg italic mx-2'>Note - In case data is not showing in the preview or download, please refresh the website.
           Your entered data will not be removed or replaced.</p>
       </div>
     </div>
