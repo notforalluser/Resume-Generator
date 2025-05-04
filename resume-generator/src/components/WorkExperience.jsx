@@ -42,12 +42,12 @@ const WorkExperience = ({ resumeData, uniqueId, fetchResumeData }) => {
     try {
       let updatedWorkExperiences;
       if (editingId) {
-        await axios.put(`http://localhost:8000/api/resumes/work-experience/${uniqueId}/${editingId}`, formData);
+        await axios.put(`https://resume-generator-6699.onrender.com/api/resumes/work-experience/${uniqueId}/${editingId}`, formData);
         updatedWorkExperiences = workExperiences.map((w) =>
           w._id === editingId ? { ...w, ...formData } : w
         );
       } else {
-        const { data } = await axios.post(`http://localhost:8000/api/resumes/work-experience/add`, {
+        const { data } = await axios.post(`https://resume-generator-6699.onrender.com/api/resumes/work-experience/add`, {
           uniqueId,
           workExperience: formData,
         });
@@ -64,7 +64,7 @@ const WorkExperience = ({ resumeData, uniqueId, fetchResumeData }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/resumes/work-experience/${uniqueId}/${id}`);
+      await axios.delete(`https://resume-generator-6699.onrender.com/api/resumes/work-experience/${uniqueId}/${id}`);
       setWorkExperiences(workExperiences.filter((w) => w._id !== id));
     } catch (error) {
       console.error("Delete failed:", error);

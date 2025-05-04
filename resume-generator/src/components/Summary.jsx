@@ -12,7 +12,7 @@ const Summary = ({ resumeData, uniqueId, fetchResumeData }) => {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/resumes/summary/add-or-update-summary",
+        "https://resume-generator-6699.onrender.com/api/resumes/summary/add-or-update-summary",
         { uniqueId, summary },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -27,7 +27,7 @@ const Summary = ({ resumeData, uniqueId, fetchResumeData }) => {
   const handleDelete = async () => {
     if (!uniqueId) return;
     try {
-      await axios.delete(`http://localhost:8000/api/resumes/summary/${uniqueId}`);
+      await axios.delete(`https://resume-generator-6699.onrender.com/api/resumes/summary/${uniqueId}`);
       alert("Summary deleted successfully");
       fetchResumeData();
     } catch (error) {

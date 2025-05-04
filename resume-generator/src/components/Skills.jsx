@@ -23,7 +23,7 @@ const Skills = ({ resumeData, uniqueId, fetchResumeData }) => {
             setInputValue("");
 
             try {
-                await axios.post("http://localhost:8000/api/resumes/skills/add", { uniqueId, skills: updatedSkills });
+                await axios.post("https://resume-generator-6699.onrender.com/api/resumes/skills/add", { uniqueId, skills: updatedSkills });
                 fetchResumeData()
             } catch (error) {
                 console.error("Error adding skill:", error);
@@ -34,7 +34,7 @@ const Skills = ({ resumeData, uniqueId, fetchResumeData }) => {
     const handleDelete = async (skillToDelete) => {
         const updatedSkills = skills.filter(skill => skill !== skillToDelete);
         try {
-            await axios.delete("http://localhost:8000/api/resumes/skills/delete", { data: { uniqueId, skill: skillToDelete } });
+            await axios.delete("https://resume-generator-6699.onrender.com/api/resumes/skills/delete", { data: { uniqueId, skill: skillToDelete } });
             fetchResumeData()
         } catch (error) {
             console.error("Error deleting skill:", error);

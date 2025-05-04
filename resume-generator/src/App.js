@@ -22,7 +22,7 @@ function App() {
     if (storedId) {
       setUniqueId(storedId);
     } else {
-      axios.get("http://localhost:8000/generate-unique-id").then((res) => {
+      axios.get("https://resume-generator-6699.onrender.com/generate-unique-id").then((res) => {
         setUniqueId(res.data.uniqueId);
         localStorage.setItem("uniqueId", res.data.uniqueId);
       });
@@ -32,7 +32,7 @@ function App() {
   const fetchResumeData = () => {
     if (uniqueId) {
       axios
-        .get(`http://localhost:8000/api/resumes/${uniqueId}`)
+        .get(`https://resume-generator-6699.onrender.com/api/resumes/${uniqueId}`)
         .then((response) => {
           setResumeData(response.data || { basicInfo: {}, education: [], workExperience: [], projects: [], skills: [], certificates: [], links: [] });
         })
@@ -45,7 +45,7 @@ function App() {
   const fetchResumeData2 = (id) => {
     if (id) {
       axios
-        .get(`http://localhost:8000/api/resumes/${id}`)
+        .get(`https://resume-generator-6699.onrender.com/api/resumes/${id}`)
         .then((response) => {
           setResumeData(response.data || {
             basicInfo: {},

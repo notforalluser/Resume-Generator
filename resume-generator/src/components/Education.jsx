@@ -56,12 +56,12 @@ const Education = ({ resumeData, uniqueId, fetchResumeData }) => {
     try {
       let updateEducation;
       if (editId) {
-        await axios.put(`http://localhost:8000/api/resumes/update-education/${uniqueId}/${editId}`, formData);
+        await axios.put(`https://resume-generator-6699.onrender.com/api/resumes/update-education/${uniqueId}/${editId}`, formData);
         updateEducation = education.map((w) =>
           w._id === editId ? { ...w, ...formData } : w
         );
       } else {
-        const { data } = await axios.post(`http://localhost:8000/api/resumes/add-education/add`, {
+        const { data } = await axios.post(`https://resume-generator-6699.onrender.com/api/resumes/add-education/add`, {
           uniqueId,
           education: formData,
         });
@@ -79,7 +79,7 @@ const Education = ({ resumeData, uniqueId, fetchResumeData }) => {
   const handleDelete = async (id) => {
     if (!uniqueId) return;
     try {
-      await axios.delete(`http://localhost:8000/api/resumes/delete-education/${uniqueId}/${id}`);
+      await axios.delete(`https://resume-generator-6699.onrender.com/api/resumes/delete-education/${uniqueId}/${id}`);
       alert("Education is deleted!!!")
       fetchResumeData()
     } catch (error) {

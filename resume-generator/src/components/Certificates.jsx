@@ -21,13 +21,13 @@ const Certificates = ({ resumeData, uniqueId, fetchResumeData }) => {
         e.preventDefault();
         try {
             if (editingId) {
-                await axios.put("http://localhost:8000/api/resumes/certificates/edit", {
+                await axios.put("https://resume-generator-6699.onrender.com/api/resumes/certificates/edit", {
                     uniqueId,
                     certificateId: editingId,
                     ...certificateData
                 });
             } else {
-                await axios.post("http://localhost:8000/api/resumes/certificates/add", {
+                await axios.post("https://resume-generator-6699.onrender.com/api/resumes/certificates/add", {
                     uniqueId,
                     ...certificateData
                 });
@@ -48,7 +48,7 @@ const Certificates = ({ resumeData, uniqueId, fetchResumeData }) => {
 
     const handleDelete = async (certificateId) => {
         try {
-            await axios.delete("http://localhost:8000/api/resumes/certificates/delete", {
+            await axios.delete("https://resume-generator-6699.onrender.com/api/resumes/certificates/delete", {
                 data: { uniqueId, certificateId }
             });
             fetchResumeData();

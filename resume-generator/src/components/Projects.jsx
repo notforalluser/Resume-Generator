@@ -20,13 +20,13 @@ const Projects = ({ resumeData, uniqueId, fetchResumeData }) => {
         e.preventDefault();
         try {
             if (editingProjectId) {
-                await axios.put("http://localhost:8000/api/resumes/projects/edit", {
+                await axios.put("https://resume-generator-6699.onrender.com/api/resumes/projects/edit", {
                     uniqueId,
                     projectId: editingProjectId,
                     updatedProject: projectData,
                 });
             } else {
-                await axios.post("http://localhost:8000/api/resumes/projects/add", {
+                await axios.post("https://resume-generator-6699.onrender.com/api/resumes/projects/add", {
                     uniqueId,
                     project: projectData,
                 });
@@ -41,7 +41,7 @@ const Projects = ({ resumeData, uniqueId, fetchResumeData }) => {
 
     const handleDelete = async (projectId) => {
         try {
-            await axios.delete("http://localhost:8000/api/resumes/projects/delete", {
+            await axios.delete("https://resume-generator-6699.onrender.com/api/resumes/projects/delete", {
                 data: { uniqueId, projectId },
             });
             fetchResumeData()

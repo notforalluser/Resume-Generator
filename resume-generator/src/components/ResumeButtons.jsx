@@ -13,7 +13,7 @@ const ResumeButtons = () => {
 
     useEffect(() => {
         if (uniqueId) {
-            axios.get(`http://localhost:8000/api/resumes/${uniqueId}`)
+            axios.get(`https://resume-generator-6699.onrender.com/api/resumes/${uniqueId}`)
                 .then(response => setResumeData(response.data))
                 .catch(error => console.error("Resume Generator"));
         }

@@ -21,7 +21,7 @@ const Links = ({ resumeData, uniqueId, fetchResumeData }) => {
     if (!website || !url) return;
 
     try {
-      const response = await axios.post("http://localhost:8000/api/resumes/links/add", {
+      const response = await axios.post("https://resume-generator-6699.onrender.com/api/resumes/links/add", {
         uniqueId, website, url,
       });
       fetchResumeData();
@@ -36,7 +36,7 @@ const Links = ({ resumeData, uniqueId, fetchResumeData }) => {
 
   const handleDelete = async (linkId) => {
     try {
-      const response = await axios.delete(`http://localhost:8000/api/resumes/links/${uniqueId}/${linkId}`);
+      const response = await axios.delete(`https://resume-generator-6699.onrender.com/api/resumes/links/${uniqueId}/${linkId}`);
       fetchResumeData();
       setLinks(response.data.links);
     } catch (error) {

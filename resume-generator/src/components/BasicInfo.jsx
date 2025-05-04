@@ -27,7 +27,7 @@ const BasicInfo = ({ resumeData, uniqueId, fetchResumeData }) => {
         ...resumeData,
         basicInfo: { ...basicInfo },
       };
-      await axios.post("http://localhost:8000/api/resumes/basic-info/add-or-update", {
+      await axios.post("https://resume-generator-6699.onrender.com/api/resumes/basic-info/add-or-update", {
         uniqueId,
         ...updatedData,
       });
