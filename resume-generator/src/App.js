@@ -22,7 +22,7 @@ function App() {
     if (storedId) {
       setUniqueId(storedId);
     } else {
-      axios.get(" /generate-unique-id").then((res) => {
+      axios.get("https://resume-generator-6699.onrender.com/generate-unique-id").then((res) => {
         setUniqueId(res.data.uniqueId);
         localStorage.setItem("uniqueId", res.data.uniqueId);
       });
