@@ -145,8 +145,7 @@ function App() {
       <ResumeButtons />
 
       <div className='flex mt-6 place-content-center w-full'>
-        <p className='bg-red-500 text-white px-2 rounded-lg italic mx-2'>Note - In case data is not showing in the preview or download, please refresh the website.
-          Your entered data will not be removed or replaced.</p>
+        <p className='bg-red-500 text-white px-2 rounded-lg italic mx-2'>Note: If the data is not visible in the preview or download, please refresh the website. Your entered data will remain intact and will not be lost.</p>
       </div>
     </div>
   );
